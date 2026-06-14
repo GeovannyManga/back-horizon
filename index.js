@@ -4,7 +4,15 @@ const socketIo = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIo(server,
+  {
+     cors: {
+    origin: "https://horizon-vptj.vercel.app",
+    methods: ["GET", "POST"],
+    credentials: true
+  }
+  }
+);
 
 // Almacenar qué usuarios están en cada sala
 const roomUsers = new Map(); // roomId -> Set de userIds
