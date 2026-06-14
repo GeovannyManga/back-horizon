@@ -4,12 +4,7 @@ const socketIo = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"]
-  }
-});
+const io = socketIo(server);
 
 // Almacenar qué usuarios están en cada sala
 const roomUsers = new Map(); // roomId -> Set de userIds
