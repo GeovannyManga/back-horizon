@@ -82,7 +82,7 @@ io.on('connection', (socket) => {
   });
 });
 
-const PORT = 3001;
+const PORT = "https://back-horizon-4l8tlrioo-geovannymangas-projects.vercel.app/";
 server.listen(PORT, () => {
   console.log(`🚀 Servidor Socket.IO corriendo en http://localhost:${PORT}`);
 });
